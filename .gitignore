@@ -1,0 +1,8 @@
+Library/
+Temp/
+Logs/
+UserSettings/
+.vscode/
+*.csproj
+*.sln
+*.DotSettings
