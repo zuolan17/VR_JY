@@ -21,13 +21,13 @@ public class BaseDriver : MonoBehaviour
         }
         _targetUnityPos = _baseLink.localPosition;
         _ros = ROSConnection.GetOrCreateInstance();
-        _ros.Subscribe<PoseMsg>("/base_pose", OnBasePose);
+        _ros.Subscribe<PoseStampedMsg>("/base_pose", OnBasePose);
     }
 
-    void OnBasePose(PoseMsg msg)
+    void OnBasePose(PoseStampedMsg msg)
     {
         // ROS坐标 → Unity坐标
-        _targetUnityPos = new Vector3(-(float)msg.position.y, (float)msg.position.z, (float)msg.position.x);
+        _targetUnityPos = new Vector3(-(float)msg.pose.position.y, (float)msg.pose.position.z, (float)msg.pose.position.x);
     }
 
     void Update()
