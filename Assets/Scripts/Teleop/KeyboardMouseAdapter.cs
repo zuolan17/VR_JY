@@ -22,6 +22,14 @@ public class KeyboardMouseAdapter : IControlCommand
         return new Vector3(pitch, yaw, roll);
     }
 
+    public Vector3 GetBaseMovement()
+    {
+        float fwd   = (Input.GetKey(KeyCode.UpArrow) ? 1 : 0) + (Input.GetKey(KeyCode.DownArrow) ? -1 : 0);
+        float up    = (Input.GetKey(KeyCode.RightShift) ? 1 : 0) + (Input.GetKey(KeyCode.RightControl) ? -1 : 0);
+        float right = (Input.GetKey(KeyCode.RightArrow) ? 1 : 0) + (Input.GetKey(KeyCode.LeftArrow) ? -1 : 0);
+        return new Vector3(right, up, fwd);
+    }
+
     public float GetGripper() => Input.GetMouseButton(0) ? 1f : 0f;
 
     public bool GetEmergencyStop() => Input.GetKey(KeyCode.Space);
