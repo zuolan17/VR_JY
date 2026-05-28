@@ -45,7 +45,7 @@ public class BaseController : MonoBehaviour
             _ros.Publish(_targetTopic, msg);
         }
 
-        // if (Time.frameCount % 30 == 0)
-        //     Debug.Log($"底座目标位姿 — 位置(ROS):{_targetPos:F3}m");
+        if (Time.frameCount % 30 == 0)
+            Debug.Log($"底座目标位姿 — 位置(ROS):{_targetPos:F3}m");
     }
 }

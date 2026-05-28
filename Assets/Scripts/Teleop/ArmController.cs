@@ -77,8 +77,8 @@ public class ArmController : MonoBehaviour
             PublishPose();
         }
 
-        // if (Time.frameCount % 30 == 0)
-        //     Debug.Log($"目标位姿 — 位置:{_targetPos:F3}m  旋转:{_targetEuler:F1}°");
+        if (Time.frameCount % 30 == 0)
+            Debug.Log($"目标位姿 — 位置:{_targetPos:F3}m  旋转:{_targetEuler:F1}°");
     }
 
     void PublishPose()
