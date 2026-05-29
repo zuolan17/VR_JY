@@ -7,8 +7,8 @@ using RosMessageTypes.Geometry;
 /// </summary>
 public class ArmController : MonoBehaviour
 {
-    [SerializeField] float _moveSpeed = 0.5f;
-    [SerializeField] float _rotateSpeed = 45f;
+    [SerializeField] float _moveSpeed = 0.2f;
+    [SerializeField] float _rotateSpeed = 20f;
     [SerializeField] string _poseTopic = "/target_pose";
     [SerializeField] Transform _baseLink;
     [SerializeField] Transform _toolLink;
